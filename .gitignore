@@ -1,0 +1,5 @@
+*xcuserdata
+*.swp
+*~
+*.app
+.DS_Store

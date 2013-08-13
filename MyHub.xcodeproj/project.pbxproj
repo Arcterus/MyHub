@@ -7,12 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116EE9DB17B7F183004C72C1 /* libMantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9BF17B7F0E2004C72C1 /* libMantle.a */; };
+		116EE9DC17B7F186004C72C1 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9CE17B7F10E004C72C1 /* libReactiveCocoa-iOS.a */; };
+		116EE9F817B818EF004C72C1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9EB17B8051C004C72C1 /* MobileCoreServices.framework */; };
+		116EE9F917B8190F004C72C1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9E917B80514004C72C1 /* SystemConfiguration.framework */; };
+		116EE9FA17B8196C004C72C1 /* libOHHTTPStubs-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9E517B80180004C72C1 /* libOHHTTPStubs-iOS.a */; };
+		116EE9FD17B8196C004C72C1 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9FB17B8196C004C72C1 /* libAFNetworking.a */; };
+		116EE9FE17B8196C004C72C1 /* libISO8601DateFormatter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9FC17B8196C004C72C1 /* libISO8601DateFormatter.a */; };
+		116EEA0117B82A36004C72C1 /* MHAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116EEA0017B82A36004C72C1 /* MHAuthenticationViewController.m */; };
+		116EEA5417B88C4D004C72C1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EEA5317B88C4D004C72C1 /* QuartzCore.framework */; };
+		116EEA6D17B9C5B0004C72C1 /* MHRepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116EEA6C17B9C5B0004C72C1 /* MHRepoViewController.m */; };
+		116EEA7217B9CC07004C72C1 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 116EEA6F17B9CC07004C72C1 /* SVProgressHUD.bundle */; };
+		116EEA7317B9CC07004C72C1 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 116EEA7117B9CC07004C72C1 /* SVProgressHUD.m */; };
+		116EEA7617B9D342004C72C1 /* MHStarredRepoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116EEA7517B9D342004C72C1 /* MHStarredRepoTableViewController.m */; };
+		116EEA9E17BAD827004C72C1 /* libOctoKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE99017B7F08F004C72C1 /* libOctoKit.a */; };
+		1187BC7D17B7357D00FE080E /* MHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B457017B5E2D70046EC5F /* MHAppDelegate.m */; };
+		1187BC7E17B7358300FE080E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B456C17B5E2D70046EC5F /* main.m */; };
+		1187BC8217B73A3B00FE080E /* MHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1187BC8117B73A3B00FE080E /* MHMainViewController.m */; };
+		1187BC8517B73DF200FE080E /* MHHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1187BC8417B73DF200FE080E /* MHHomeViewController.m */; };
+		1187BC8817B73E5000FE080E /* MHRepoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1187BC8717B73E5000FE080E /* MHRepoTableViewController.m */; };
+		1187BC8B17B774FA00FE080E /* MHSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1187BC8917B774C900FE080E /* MHSettingsViewController.m */; };
 		119B456117B5E2D70046EC5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119B456017B5E2D70046EC5F /* Foundation.framework */; };
 		119B456317B5E2D70046EC5F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119B456217B5E2D70046EC5F /* CoreGraphics.framework */; };
 		119B456517B5E2D70046EC5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119B456417B5E2D70046EC5F /* UIKit.framework */; };
 		119B456B17B5E2D70046EC5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 119B456917B5E2D70046EC5F /* InfoPlist.strings */; };
-		119B456D17B5E2D70046EC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B456C17B5E2D70046EC5F /* main.m */; };
-		119B457117B5E2D70046EC5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B457017B5E2D70046EC5F /* AppDelegate.m */; };
 		119B457317B5E2D70046EC5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119B457217B5E2D70046EC5F /* Images.xcassets */; };
 		119B457A17B5E2D70046EC5F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119B457917B5E2D70046EC5F /* XCTest.framework */; };
 		119B457B17B5E2D70046EC5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119B456017B5E2D70046EC5F /* Foundation.framework */; };
@@ -22,6 +40,132 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		116EE98B17B7F08F004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE98017B7F08E004C72C1 /* OctoKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0871EA8169E2EFC00016ACA;
+			remoteInfo = "OctoKit Mac";
+		};
+		116EE98D17B7F08F004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE98017B7F08E004C72C1 /* OctoKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0871EC0169E2EFC00016ACA;
+			remoteInfo = "OctoKit Mac Tests";
+		};
+		116EE98F17B7F08F004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE98017B7F08E004C72C1 /* OctoKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0871FE4169E309900016ACA;
+			remoteInfo = "OctoKit iOS";
+		};
+		116EE99117B7F08F004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE98017B7F08E004C72C1 /* OctoKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0871FF3169E309A00016ACA;
+			remoteInfo = "OctoKit iOS Tests";
+		};
+		116EE9BA17B7F0E2004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9B317B7F0E2004C72C1 /* Mantle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D042FC3C15F72B23004E8054;
+			remoteInfo = "Mantle Mac";
+		};
+		116EE9BC17B7F0E2004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9B317B7F0E2004C72C1 /* Mantle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D042FC5415F72B23004E8054;
+			remoteInfo = "Mantle Mac Tests";
+		};
+		116EE9BE17B7F0E2004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9B317B7F0E2004C72C1 /* Mantle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D042FC7915F72BC7004E8054;
+			remoteInfo = "Mantle iOS";
+		};
+		116EE9C017B7F0E2004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9B317B7F0E2004C72C1 /* Mantle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D042FC8715F72BC7004E8054;
+			remoteInfo = "Mantle iOS Tests";
+		};
+		116EE9CB17B7F10E004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9C217B7F10E004C72C1 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88037F8315056328001A5B19;
+			remoteInfo = ReactiveCocoa;
+		};
+		116EE9CD17B7F10E004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9C217B7F10E004C72C1 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88F440AB153DAC820097B4C3;
+			remoteInfo = "ReactiveCocoa-iOS";
+		};
+		116EE9CF17B7F10E004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9C217B7F10E004C72C1 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88CDF7DC15000FCF00163A9F;
+			remoteInfo = ReactiveCocoaTests;
+		};
+		116EE9D117B7F10E004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9C217B7F10E004C72C1 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5FAF5223174D4C2000CAC810;
+			remoteInfo = "ReactiveCocoaTests-iOS";
+		};
+		116EE9D317B7F10E004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9C217B7F10E004C72C1 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1860F412177C91B500C7B3C9;
+			remoteInfo = "ReactiveCocoa-iOS-UIKitTestHost";
+		};
+		116EE9D517B7F10E004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9C217B7F10E004C72C1 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1860F430177C91B500C7B3C9;
+			remoteInfo = "ReactiveCocoa-iOS-UIKitTestHostTests";
+		};
+		116EEA2117B83276004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9B117B7F0C5004C72C1 /* OctoKitDependencies.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0476DBD177916920071F3CB;
+			remoteInfo = "AFNetworking Mac";
+		};
+		116EEA2317B83276004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9B117B7F0C5004C72C1 /* OctoKitDependencies.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0476DFF177917050071F3CB;
+			remoteInfo = "AFNetworking iOS";
+		};
+		116EEA2517B83276004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9B117B7F0C5004C72C1 /* OctoKitDependencies.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0476E5E17791AA50071F3CB;
+			remoteInfo = "ISO8601DateFormatter Mac";
+		};
+		116EEA2717B83276004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9B117B7F0C5004C72C1 /* OctoKitDependencies.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0476E8817791AE70071F3CB;
+			remoteInfo = "ISO8601DateFormatter iOS";
+		};
 		119B457D17B5E2D70046EC5F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 119B455517B5E2D70046EC5F /* Project object */;
@@ -32,22 +176,60 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		116EE98017B7F08E004C72C1 /* OctoKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OctoKit.xcodeproj; path = OctoKit/OctoKit.xcodeproj; sourceTree = "<group>"; };
+		116EE9B117B7F0C5004C72C1 /* OctoKitDependencies.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OctoKitDependencies.xcodeproj; path = OctoKit/External/OctoKitDependencies/OctoKitDependencies.xcodeproj; sourceTree = "<group>"; };
+		116EE9B317B7F0E2004C72C1 /* Mantle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Mantle.xcodeproj; path = OctoKit/External/Mantle/Mantle.xcodeproj; sourceTree = "<group>"; };
+		116EE9C217B7F10E004C72C1 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = OctoKit/External/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
+		116EE9DD17B7F8D5004C72C1 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "OctoKit/External/OctoKitDependencies/build/Debug-iphoneos/libAFNetworking.a"; sourceTree = "<group>"; };
+		116EE9DF17B7F8E3004C72C1 /* libOHHTTPStubs-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libOHHTTPStubs-iOS.a"; path = "OctoKit/External/OHHTTPStubs/OHHTTPStubs/build/Debug-iphoneos/libOHHTTPStubs-iOS.a"; sourceTree = "<group>"; };
+		116EE9E117B7F8F5004C72C1 /* libISO8601DateFormatter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libISO8601DateFormatter.a; path = "OctoKit/External/OctoKitDependencies/build/Debug-iphoneos/libISO8601DateFormatter.a"; sourceTree = "<group>"; };
+		116EE9E317B8016F004C72C1 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "OctoKit/External/OctoKitDependencies/build/Debug-iphoneos/libAFNetworking.a"; sourceTree = "<group>"; };
+		116EE9E517B80180004C72C1 /* libOHHTTPStubs-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libOHHTTPStubs-iOS.a"; path = "../../../../Library/Developer/Xcode/DerivedData/MyHub-bjqqafnmsrlvtvfcqaxevjsuwtnj/Build/Products/Debug-iphoneos/libOHHTTPStubs-iOS.a"; sourceTree = "<group>"; };
+		116EE9E717B80186004C72C1 /* libISO8601DateFormatter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libISO8601DateFormatter.a; path = "OctoKit/External/OctoKitDependencies/build/Debug-iphoneos/libISO8601DateFormatter.a"; sourceTree = "<group>"; };
+		116EE9E917B80514004C72C1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		116EE9EB17B8051C004C72C1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		116EE9F317B818CA004C72C1 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "OctoKit/External/OctoKitDependencies/build/Debug-iphoneos/libAFNetworking.a"; sourceTree = "<group>"; };
+		116EE9F617B818D3004C72C1 /* libISO8601DateFormatter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libISO8601DateFormatter.a; path = "OctoKit/External/OctoKitDependencies/build/Debug-iphoneos/libISO8601DateFormatter.a"; sourceTree = "<group>"; };
+		116EE9FB17B8196C004C72C1 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "OctoKit/External/OctoKitDependencies/build/Debug-iphoneos/libAFNetworking.a"; sourceTree = "<group>"; };
+		116EE9FC17B8196C004C72C1 /* libISO8601DateFormatter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libISO8601DateFormatter.a; path = "OctoKit/External/OctoKitDependencies/build/Debug-iphoneos/libISO8601DateFormatter.a"; sourceTree = "<group>"; };
+		116EE9FF17B82A36004C72C1 /* MHAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHAuthenticationViewController.h; path = include/MHAuthenticationViewController.h; sourceTree = SOURCE_ROOT; };
+		116EEA0017B82A36004C72C1 /* MHAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHAuthenticationViewController.m; path = src/MHAuthenticationViewController.m; sourceTree = SOURCE_ROOT; };
+		116EEA5317B88C4D004C72C1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		116EEA5517B8B09A004C72C1 /* libsystem_blocks.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsystem_blocks.dylib; path = usr/lib/system/libsystem_blocks.dylib; sourceTree = SDKROOT; };
+		116EEA6B17B9C5B0004C72C1 /* MHRepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHRepoViewController.h; path = include/MHRepoViewController.h; sourceTree = SOURCE_ROOT; };
+		116EEA6C17B9C5B0004C72C1 /* MHRepoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHRepoViewController.m; path = src/MHRepoViewController.m; sourceTree = SOURCE_ROOT; };
+		116EEA6F17B9CC07004C72C1 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		116EEA7017B9CC07004C72C1 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		116EEA7117B9CC07004C72C1 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		116EEA7417B9D342004C72C1 /* MHStarredRepoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHStarredRepoTableViewController.h; path = include/MHStarredRepoTableViewController.h; sourceTree = SOURCE_ROOT; };
+		116EEA7517B9D342004C72C1 /* MHStarredRepoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHStarredRepoTableViewController.m; path = src/MHStarredRepoTableViewController.m; sourceTree = SOURCE_ROOT; };
+		116EEA8617BAD386004C72C1 /* bootstrap.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bootstrap.sh; sourceTree = SOURCE_ROOT; };
+		116EEA9C17BAD394004C72C1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		116EEA9D17BAD39B004C72C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		1187BC8017B73A3B00FE080E /* MHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHMainViewController.h; path = include/MHMainViewController.h; sourceTree = SOURCE_ROOT; };
+		1187BC8117B73A3B00FE080E /* MHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHMainViewController.m; path = src/MHMainViewController.m; sourceTree = SOURCE_ROOT; };
+		1187BC8317B73DF200FE080E /* MHHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHHomeViewController.h; path = include/MHHomeViewController.h; sourceTree = SOURCE_ROOT; };
+		1187BC8417B73DF200FE080E /* MHHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHHomeViewController.m; path = src/MHHomeViewController.m; sourceTree = SOURCE_ROOT; };
+		1187BC8617B73E5000FE080E /* MHRepoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHRepoTableViewController.h; path = include/MHRepoTableViewController.h; sourceTree = SOURCE_ROOT; };
+		1187BC8717B73E5000FE080E /* MHRepoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHRepoTableViewController.m; path = src/MHRepoTableViewController.m; sourceTree = SOURCE_ROOT; };
+		1187BC8917B774C900FE080E /* MHSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MHSettingsViewController.m; path = src/MHSettingsViewController.m; sourceTree = SOURCE_ROOT; };
+		1187BC8A17B774D700FE080E /* MHSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MHSettingsViewController.h; path = include/MHSettingsViewController.h; sourceTree = SOURCE_ROOT; };
 		119B455D17B5E2D70046EC5F /* MyHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		119B456017B5E2D70046EC5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		119B456217B5E2D70046EC5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		119B456417B5E2D70046EC5F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		119B456817B5E2D70046EC5F /* MyHub-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyHub-Info.plist"; sourceTree = "<group>"; };
-		119B456A17B5E2D70046EC5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		119B456C17B5E2D70046EC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		119B456E17B5E2D70046EC5F /* MyHub-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyHub-Prefix.pch"; sourceTree = "<group>"; };
-		119B456F17B5E2D70046EC5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		119B457017B5E2D70046EC5F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		119B457217B5E2D70046EC5F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		119B456817B5E2D70046EC5F /* MyHub-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MyHub-Info.plist"; path = "resource/MyHub-Info.plist"; sourceTree = SOURCE_ROOT; };
+		119B456A17B5E2D70046EC5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = resource/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		119B456C17B5E2D70046EC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/main.m; sourceTree = SOURCE_ROOT; };
+		119B456E17B5E2D70046EC5F /* MyHub-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MyHub-Prefix.pch"; path = "include/MyHub-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		119B456F17B5E2D70046EC5F /* MHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MHAppDelegate.h; path = include/MHAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		119B457017B5E2D70046EC5F /* MHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MHAppDelegate.m; path = src/MHAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		119B457217B5E2D70046EC5F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = resource/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		119B457817B5E2D70046EC5F /* MyHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		119B457917B5E2D70046EC5F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		119B458117B5E2D70046EC5F /* MyHubTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyHubTests-Info.plist"; sourceTree = "<group>"; };
-		119B458317B5E2D70046EC5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		119B458517B5E2D70046EC5F /* MyHubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyHubTests.m; sourceTree = "<group>"; };
+		119B458117B5E2D70046EC5F /* MyHubTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MyHubTests-Info.plist"; path = "test/resource/MyHubTests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		119B458317B5E2D70046EC5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = test/resource/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		119B458517B5E2D70046EC5F /* MyHubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MyHubTests.m; path = test/src/MyHubTests.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +237,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116EEA5417B88C4D004C72C1 /* QuartzCore.framework in Frameworks */,
+				116EE9F917B8190F004C72C1 /* SystemConfiguration.framework in Frameworks */,
+				116EE9F817B818EF004C72C1 /* MobileCoreServices.framework in Frameworks */,
 				119B456317B5E2D70046EC5F /* CoreGraphics.framework in Frameworks */,
 				119B456517B5E2D70046EC5F /* UIKit.framework in Frameworks */,
 				119B456117B5E2D70046EC5F /* Foundation.framework in Frameworks */,
+				116EEA9E17BAD827004C72C1 /* libOctoKit.a in Frameworks */,
+				116EE9DC17B7F186004C72C1 /* libReactiveCocoa-iOS.a in Frameworks */,
+				116EE9DB17B7F183004C72C1 /* libMantle.a in Frameworks */,
+				116EE9FD17B8196C004C72C1 /* libAFNetworking.a in Frameworks */,
+				116EE9FE17B8196C004C72C1 /* libISO8601DateFormatter.a in Frameworks */,
+				116EE9FA17B8196C004C72C1 /* libOHHTTPStubs-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +265,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		116EE98117B7F08E004C72C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				116EE98C17B7F08F004C72C1 /* OctoKit.framework */,
+				116EE98E17B7F08F004C72C1 /* OctoKit Mac Tests.octest */,
+				116EE99017B7F08F004C72C1 /* libOctoKit.a */,
+				116EE99217B7F08F004C72C1 /* OctoKit iOS Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		116EE9B417B7F0E2004C72C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				116EE9BB17B7F0E2004C72C1 /* Mantle.framework */,
+				116EE9BD17B7F0E2004C72C1 /* Mantle Mac Tests.octest */,
+				116EE9BF17B7F0E2004C72C1 /* libMantle.a */,
+				116EE9C117B7F0E2004C72C1 /* Mantle iOS Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		116EE9C317B7F10E004C72C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				116EE9CC17B7F10E004C72C1 /* ReactiveCocoa.framework */,
+				116EE9CE17B7F10E004C72C1 /* libReactiveCocoa-iOS.a */,
+				116EE9D017B7F10E004C72C1 /* ReactiveCocoaTests.octest */,
+				116EE9D217B7F10E004C72C1 /* ReactiveCocoaTests-iOS.octest */,
+				116EE9D417B7F10E004C72C1 /* ReactiveCocoa-iOS-UIKitTestHost.app */,
+				116EE9D617B7F10E004C72C1 /* ReactiveCocoa-iOS-UIKitTestHostTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		116EEA1017B83276004C72C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				116EEA2217B83276004C72C1 /* AFNetworking.framework */,
+				116EEA2417B83276004C72C1 /* libAFNetworking.a */,
+				116EEA2617B83276004C72C1 /* ISO8601DateFormatter.framework */,
+				116EEA2817B83276004C72C1 /* libISO8601DateFormatter.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		116EEA6E17B9CC07004C72C1 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				116EEA6F17B9CC07004C72C1 /* SVProgressHUD.bundle */,
+				116EEA7017B9CC07004C72C1 /* SVProgressHUD.h */,
+				116EEA7117B9CC07004C72C1 /* SVProgressHUD.m */,
+			);
+			name = SVProgressHUD;
+			path = SVProgressHUD/SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		119B455417B5E2D70046EC5F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +329,11 @@
 				119B457F17B5E2D70046EC5F /* MyHubTests */,
 				119B455F17B5E2D70046EC5F /* Frameworks */,
 				119B455E17B5E2D70046EC5F /* Products */,
+				116EEA6E17B9CC07004C72C1 /* SVProgressHUD */,
+				116EE98017B7F08E004C72C1 /* OctoKit.xcodeproj */,
+				116EE9B117B7F0C5004C72C1 /* OctoKitDependencies.xcodeproj */,
+				116EE9B317B7F0E2004C72C1 /* Mantle.xcodeproj */,
+				116EE9C217B7F10E004C72C1 /* ReactiveCocoa.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +349,20 @@
 		119B455F17B5E2D70046EC5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				116EEA5517B8B09A004C72C1 /* libsystem_blocks.dylib */,
+				116EEA5317B88C4D004C72C1 /* QuartzCore.framework */,
+				116EE9FB17B8196C004C72C1 /* libAFNetworking.a */,
+				116EE9FC17B8196C004C72C1 /* libISO8601DateFormatter.a */,
+				116EE9F617B818D3004C72C1 /* libISO8601DateFormatter.a */,
+				116EE9F317B818CA004C72C1 /* libAFNetworking.a */,
+				116EE9EB17B8051C004C72C1 /* MobileCoreServices.framework */,
+				116EE9E917B80514004C72C1 /* SystemConfiguration.framework */,
+				116EE9E717B80186004C72C1 /* libISO8601DateFormatter.a */,
+				116EE9E517B80180004C72C1 /* libOHHTTPStubs-iOS.a */,
+				116EE9E317B8016F004C72C1 /* libAFNetworking.a */,
+				116EE9E117B7F8F5004C72C1 /* libISO8601DateFormatter.a */,
+				116EE9DF17B7F8E3004C72C1 /* libOHHTTPStubs-iOS.a */,
+				116EE9DD17B7F8D5004C72C1 /* libAFNetworking.a */,
 				119B456017B5E2D70046EC5F /* Foundation.framework */,
 				119B456217B5E2D70046EC5F /* CoreGraphics.framework */,
 				119B456417B5E2D70046EC5F /* UIKit.framework */,
@@ -107,8 +374,22 @@
 		119B456617B5E2D70046EC5F /* MyHub */ = {
 			isa = PBXGroup;
 			children = (
-				119B456F17B5E2D70046EC5F /* AppDelegate.h */,
-				119B457017B5E2D70046EC5F /* AppDelegate.m */,
+				1187BC8017B73A3B00FE080E /* MHMainViewController.h */,
+				1187BC8117B73A3B00FE080E /* MHMainViewController.m */,
+				1187BC8A17B774D700FE080E /* MHSettingsViewController.h */,
+				1187BC8917B774C900FE080E /* MHSettingsViewController.m */,
+				1187BC8617B73E5000FE080E /* MHRepoTableViewController.h */,
+				1187BC8717B73E5000FE080E /* MHRepoTableViewController.m */,
+				116EEA7417B9D342004C72C1 /* MHStarredRepoTableViewController.h */,
+				116EEA7517B9D342004C72C1 /* MHStarredRepoTableViewController.m */,
+				116EEA6B17B9C5B0004C72C1 /* MHRepoViewController.h */,
+				116EEA6C17B9C5B0004C72C1 /* MHRepoViewController.m */,
+				1187BC8317B73DF200FE080E /* MHHomeViewController.h */,
+				1187BC8417B73DF200FE080E /* MHHomeViewController.m */,
+				116EE9FF17B82A36004C72C1 /* MHAuthenticationViewController.h */,
+				116EEA0017B82A36004C72C1 /* MHAuthenticationViewController.m */,
+				119B456F17B5E2D70046EC5F /* MHAppDelegate.h */,
+				119B457017B5E2D70046EC5F /* MHAppDelegate.m */,
 				119B457217B5E2D70046EC5F /* Images.xcassets */,
 				119B456717B5E2D70046EC5F /* Supporting Files */,
 			);
@@ -118,6 +399,9 @@
 		119B456717B5E2D70046EC5F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				116EEA9D17BAD39B004C72C1 /* README.md */,
+				116EEA9C17BAD394004C72C1 /* LICENSE */,
+				116EEA8617BAD386004C72C1 /* bootstrap.sh */,
 				119B456817B5E2D70046EC5F /* MyHub-Info.plist */,
 				119B456917B5E2D70046EC5F /* InfoPlist.strings */,
 				119B456C17B5E2D70046EC5F /* main.m */,
@@ -188,9 +472,13 @@
 		119B455517B5E2D70046EC5F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MH;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "kRaken Research";
 				TargetAttributes = {
+					119B455C17B5E2D70046EC5F = {
+						DevelopmentTeam = BBAR9SN5JT;
+					};
 					119B457717B5E2D70046EC5F = {
 						TestTargetID = 119B455C17B5E2D70046EC5F;
 					};
@@ -206,6 +494,24 @@
 			mainGroup = 119B455417B5E2D70046EC5F;
 			productRefGroup = 119B455E17B5E2D70046EC5F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 116EE9B417B7F0E2004C72C1 /* Products */;
+					ProjectRef = 116EE9B317B7F0E2004C72C1 /* Mantle.xcodeproj */;
+				},
+				{
+					ProductGroup = 116EE98117B7F08E004C72C1 /* Products */;
+					ProjectRef = 116EE98017B7F08E004C72C1 /* OctoKit.xcodeproj */;
+				},
+				{
+					ProductGroup = 116EEA1017B83276004C72C1 /* Products */;
+					ProjectRef = 116EE9B117B7F0C5004C72C1 /* OctoKitDependencies.xcodeproj */;
+				},
+				{
+					ProductGroup = 116EE9C317B7F10E004C72C1 /* Products */;
+					ProjectRef = 116EE9C217B7F10E004C72C1 /* ReactiveCocoa.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				119B455C17B5E2D70046EC5F /* MyHub */,
@@ -214,12 +520,142 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		116EE98C17B7F08F004C72C1 /* OctoKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OctoKit.framework;
+			remoteRef = 116EE98B17B7F08F004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EE98E17B7F08F004C72C1 /* OctoKit Mac Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "OctoKit Mac Tests.octest";
+			remoteRef = 116EE98D17B7F08F004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EE99017B7F08F004C72C1 /* libOctoKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOctoKit.a;
+			remoteRef = 116EE98F17B7F08F004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EE99217B7F08F004C72C1 /* OctoKit iOS Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "OctoKit iOS Tests.octest";
+			remoteRef = 116EE99117B7F08F004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EE9BB17B7F0E2004C72C1 /* Mantle.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Mantle.framework;
+			remoteRef = 116EE9BA17B7F0E2004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EE9BD17B7F0E2004C72C1 /* Mantle Mac Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Mantle Mac Tests.octest";
+			remoteRef = 116EE9BC17B7F0E2004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EE9BF17B7F0E2004C72C1 /* libMantle.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMantle.a;
+			remoteRef = 116EE9BE17B7F0E2004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EE9C117B7F0E2004C72C1 /* Mantle iOS Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Mantle iOS Tests.octest";
+			remoteRef = 116EE9C017B7F0E2004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EE9CC17B7F10E004C72C1 /* ReactiveCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveCocoa.framework;
+			remoteRef = 116EE9CB17B7F10E004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EE9CE17B7F10E004C72C1 /* libReactiveCocoa-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libReactiveCocoa-iOS.a";
+			remoteRef = 116EE9CD17B7F10E004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EE9D017B7F10E004C72C1 /* ReactiveCocoaTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveCocoaTests.octest;
+			remoteRef = 116EE9CF17B7F10E004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EE9D217B7F10E004C72C1 /* ReactiveCocoaTests-iOS.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ReactiveCocoaTests-iOS.octest";
+			remoteRef = 116EE9D117B7F10E004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EE9D417B7F10E004C72C1 /* ReactiveCocoa-iOS-UIKitTestHost.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "ReactiveCocoa-iOS-UIKitTestHost.app";
+			remoteRef = 116EE9D317B7F10E004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EE9D617B7F10E004C72C1 /* ReactiveCocoa-iOS-UIKitTestHostTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ReactiveCocoa-iOS-UIKitTestHostTests.octest";
+			remoteRef = 116EE9D517B7F10E004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EEA2217B83276004C72C1 /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = 116EEA2117B83276004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EEA2417B83276004C72C1 /* libAFNetworking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAFNetworking.a;
+			remoteRef = 116EEA2317B83276004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EEA2617B83276004C72C1 /* ISO8601DateFormatter.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ISO8601DateFormatter.framework;
+			remoteRef = 116EEA2517B83276004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EEA2817B83276004C72C1 /* libISO8601DateFormatter.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libISO8601DateFormatter.a;
+			remoteRef = 116EEA2717B83276004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		119B455B17B5E2D70046EC5F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				119B456B17B5E2D70046EC5F /* InfoPlist.strings in Resources */,
+				116EEA7217B9CC07004C72C1 /* SVProgressHUD.bundle in Resources */,
 				119B457317B5E2D70046EC5F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,8 +675,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				119B457117B5E2D70046EC5F /* AppDelegate.m in Sources */,
-				119B456D17B5E2D70046EC5F /* main.m in Sources */,
+				1187BC7D17B7357D00FE080E /* MHAppDelegate.m in Sources */,
+				1187BC7E17B7358300FE080E /* main.m in Sources */,
+				116EEA7617B9D342004C72C1 /* MHStarredRepoTableViewController.m in Sources */,
+				1187BC8517B73DF200FE080E /* MHHomeViewController.m in Sources */,
+				116EEA6D17B9C5B0004C72C1 /* MHRepoViewController.m in Sources */,
+				1187BC8817B73E5000FE080E /* MHRepoTableViewController.m in Sources */,
+				116EEA7317B9CC07004C72C1 /* SVProgressHUD.m in Sources */,
+				1187BC8B17B774FA00FE080E /* MHSettingsViewController.m in Sources */,
+				116EEA0117B82A36004C72C1 /* MHAuthenticationViewController.m in Sources */,
+				1187BC8217B73A3B00FE080E /* MHMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +759,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -346,6 +791,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -357,10 +803,44 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEAD_CODE_STRIPPING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_FAST_MATH = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MyHub/MyHub-Prefix.pch";
-				INFOPLIST_FILE = "MyHub/MyHub-Info.plist";
+				GCC_PREFIX_HEADER = "include/MyHub-Prefix.pch";
+				GCC_SHORT_ENUMS = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/resource/MyHub-Info.plist";
+				INFOPLIST_OUTPUT_FORMAT = binary;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MyHub-bjqqafnmsrlvtvfcqaxevjsuwtnj/Build/Products/Debug-iphoneos",
+					"$(SDKROOT)/usr/lib/system",
+				);
+				LLVM_LTO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PLIST_FILE_OUTPUT_FORMAT = binary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -370,10 +850,43 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEAD_CODE_STRIPPING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_FAST_MATH = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MyHub/MyHub-Prefix.pch";
-				INFOPLIST_FILE = "MyHub/MyHub-Info.plist";
+				GCC_PREFIX_HEADER = "include/MyHub-Prefix.pch";
+				GCC_SHORT_ENUMS = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/resource/MyHub-Info.plist";
+				INFOPLIST_OUTPUT_FORMAT = binary;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MyHub-bjqqafnmsrlvtvfcqaxevjsuwtnj/Build/Products/Debug-iphoneos",
+					"$(SDKROOT)/usr/lib/system",
+				);
+				LLVM_LTO = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PLIST_FILE_OUTPUT_FORMAT = binary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -393,7 +906,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "MyHubTests/MyHubTests-Info.plist";
+				INFOPLIST_FILE = "test/resource/MyHubTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -410,8 +923,8 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MyHub/MyHub-Prefix.pch";
-				INFOPLIST_FILE = "MyHubTests/MyHubTests-Info.plist";
+				GCC_PREFIX_HEADER = "include/MyHub-Prefix.pch";
+				INFOPLIST_FILE = "test/resource/MyHubTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -437,6 +950,7 @@
 				119B458B17B5E2D70046EC5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		119B458C17B5E2D70046EC5F /* Build configuration list for PBXNativeTarget "MyHubTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +959,7 @@
 				119B458E17B5E2D70046EC5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

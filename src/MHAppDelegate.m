@@ -1,22 +1,30 @@
 //
-//  AppDelegate.m
+//  MHAppDelegate.m
 //  MyHub
 //
-//  Created by Alex Lyon on 8/9/13.
+//  Created by Arcterus on 8/9/13.
 //  Copyright (c) 2013 kRaken Research. All rights reserved.
 //
+//  This Source Code Form is subject to the terms of the Mozilla Public
+//  License, v. 2.0. If a copy of the MPL was not distributed with this
+//  file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//
 
-#import "AppDelegate.h"
+#import "MHAppDelegate.h"
+#import "MHMainViewController.h"
+#import "MHAuthenticationViewController.h"
 
-@implementation AppDelegate
+@implementation MHAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	// Override point for customization after application launch.
+	self.window.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];//[UIColor whiteColor];
+	
+	self.window.rootViewController = [[MHAuthenticationViewController alloc] init];
+	
+	[self.window makeKeyAndVisible];
+	return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -44,6 +52,11 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+	NSLog(@"%@", [url absoluteString]);
+	return YES;
 }
 
 @end
