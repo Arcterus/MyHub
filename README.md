@@ -19,7 +19,7 @@ $ ./bootstrap.sh
 $ xcodebuild
 ```
 
-#### Legal ####
+## Legal ##
 
 Copyright (C) 2013 kRaken Research.  All rights reserved.  
 
