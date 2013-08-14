@@ -56,38 +56,37 @@
 		MHAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 		appDelegate.client = [OCTClient authenticatedClientWithUser:[OCTUser userWithLogin:_username.text server:[OCTServer serverWithBaseURL:nil]] password:_password.text];
 		
-		// FIXME: add a verifying pop-up here
 		[SVProgressHUD showWithStatus:@"Verifying..." maskType:SVProgressHUDMaskTypeGradient];
 		
-		NSError *error;
-		BOOL success;
-		[[appDelegate.client fetchUserInfo] asynchronousFirstOrDefault:nil success:&success error:&error];
-		
-		if(!success) {
-			if([error code] == OCTClientErrorConnectionFailed || [error code] == OCTClientErrorServiceRequestFailed) {
-				[SVProgressHUD showErrorWithStatus:@"Network Error"];
-			} else if([error code] == OCTClientErrorAuthenticationFailed) {
-				[SVProgressHUD showErrorWithStatus:@"Invalid Username or Password"];
-			} else {
-				[SVProgressHUD showErrorWithStatus:@"Unknown Error"];
-			}
-		} else {
-			[SVProgressHUD showSuccessWithStatus:@"Success"];
-		
-			// Slide-up transition
-			CGFloat duration = 0.7;
-			MHMainViewController *mainView = [[MHMainViewController alloc] init];
-			[mainView viewWillAppear:YES];
-			[self viewWillDisappear:YES];
-			[appDelegate.window insertSubview:mainView.view belowSubview:self.view];
-			[mainView viewDidAppear:YES];
-			[UIView beginAnimations:nil context:nil];
-			[UIView setAnimationDuration:duration];
-			mainView.view.transform = CGAffineTransformMakeTranslation(0, 0);
-			self.view.transform = CGAffineTransformMakeTranslation(0, -self.view.frame.size.height);
-			[UIView commitAnimations];
-			[self performSelector:@selector(animationDone:) withObject:mainView afterDelay:duration];
-		}
+		[[appDelegate.client fetchUserInfo] subscribeError:^(NSError *error) {
+			[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+				if([error code] == OCTClientErrorConnectionFailed || [error code] == OCTClientErrorServiceRequestFailed) {
+					[SVProgressHUD showErrorWithStatus:@"Network Error"];
+				} else if([error code] == OCTClientErrorAuthenticationFailed) {
+					[SVProgressHUD showErrorWithStatus:@"Invalid Username or Password"];
+				} else {
+					[SVProgressHUD showErrorWithStatus:@"Unknown Error"];
+				}
+			}];
+		} completed:^ {
+			[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+				[SVProgressHUD showSuccessWithStatus:@"Success"];
+				
+				// Slide-up transition
+				CGFloat duration = 0.7;
+				MHMainViewController *mainView = [[MHMainViewController alloc] init];
+				[mainView viewWillAppear:YES];
+				[self viewWillDisappear:YES];
+				[appDelegate.window insertSubview:mainView.view belowSubview:self.view];
+				[mainView viewDidAppear:YES];
+				[UIView beginAnimations:nil context:nil];
+				[UIView setAnimationDuration:duration];
+				mainView.view.transform = CGAffineTransformMakeTranslation(0, 0);
+				self.view.transform = CGAffineTransformMakeTranslation(0, -self.view.frame.size.height);
+				[UIView commitAnimations];
+				[self performSelector:@selector(animationDone:) withObject:mainView afterDelay:duration];
+			}];
+		}];
 	}
 }
 
