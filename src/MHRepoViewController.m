@@ -48,8 +48,10 @@
 				 }
 				 return NSOrderedSame;
 			 }];
-			 [SVProgressHUD dismiss];
-			 [_tableView reloadData];
+			 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+				 [SVProgressHUD dismiss];
+				 [_tableView reloadData];
+			 }];
 			 NSLog(@"Loaded repo files");
 		 }];
 	}

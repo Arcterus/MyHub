@@ -45,7 +45,6 @@
 			 NSLog(@"Loaded users repositories");
 		 }];
 		
-		// right location?
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sortRepos:) name:@"sortRepos" object:nil];
 	}
 	return self;
