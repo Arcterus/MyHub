@@ -1,8 +1,8 @@
 //
-//  MHRepoViewController.h
+//  MHSortOptionViewController.h
 //  MyHub
 //
-//  Created by Arcterus on 8/12/13.
+//  Created by Arcterus on 8/13/13.
 //  Copyright (c) 2013 kRaken Research. All rights reserved.
 //
 //  This Source Code Form is subject to the terms of the Mozilla Public
@@ -11,10 +11,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OctoKit/OctoKit.h"
 
-@interface MHRepoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+typedef enum {
+	SORT_DATE = 0,
+	SORT_NAME
+} sort_method_t;
 
-- (id)initWithRepo:(OCTRepository *)repo;
+@interface MHSortOptionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

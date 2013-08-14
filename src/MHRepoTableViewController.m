@@ -15,16 +15,20 @@
 #import "MHAppDelegate.h"
 #import "OctoKit/OctoKit.h"
 #import "ReactiveCocoa/ReactiveCocoa.h"
+#import "UIPopoverController+iPhone.h"
 
 @interface MHRepoTableViewController ()
 
 - (void)refresh:(UIRefreshControl *)refreshControl;
+- (void)selectSortMethod:(id)sender;
+- (void)sortRepos:(NSNotification *)block;
 
 @end
 
 @implementation MHRepoTableViewController {
 	UITableView *_tableView;
 	NSMutableArray *_repos;
+	UIPopoverController *_popover;
 }
 
 #pragma clang diagnostic push
@@ -40,6 +44,9 @@
 		 } completed:^{
 			 NSLog(@"Loaded users repositories");
 		 }];
+		
+		// right location?
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sortRepos:) name:@"sortRepos" object:nil];
 	}
 	return self;
 }
@@ -60,14 +67,18 @@
 	UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
 	[refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
 	
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sort by Name" style:UIBarButtonItemStylePlain target:self action:@selector(selectSortMethod:)];
+	
 	[_tableView addSubview:refreshControl];
 	[self.view addSubview:_tableView];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)didReceiveMemoryWarning {
+	[super didReceiveMemoryWarning];
+	// Dispose of any resources that can be recreated.
+	if(_popover != nil && !_popover.isPopoverVisible) {
+		_popover = nil;
+	}
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -93,6 +104,39 @@
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
 	[refreshControl endRefreshing];
+}
+
+- (void)sortRepos:(NSNotification *)notification {
+	sort_method_t sortMethod = ((NSIndexPath *) notification.object).row;
+	[_popover dismissPopoverAnimated:YES];
+	switch(sortMethod) {
+		case SORT_DATE:
+			self.navigationItem.rightBarButtonItem.title = @"Sort by Date";
+			break;
+		case SORT_NAME:
+			self.navigationItem.rightBarButtonItem.title = @"Sort by Name";
+			break;
+	}
+	[_repos sortUsingComparator:^NSComparisonResult(OCTRepository *obj1, OCTRepository *obj2) {
+		switch(sortMethod) {
+			case SORT_DATE:
+				return [obj1.datePushed compare:obj2.datePushed] == NSOrderedAscending ? NSOrderedDescending : NSOrderedAscending;
+			case SORT_NAME:
+				return [obj1.name caseInsensitiveCompare:obj2.name];
+		}
+	}];
+	[_tableView reloadData];
+}
+
+- (void)selectSortMethod:(id)sender {
+	if(_popover == nil) {
+		_popover = [[UIPopoverController alloc] initWithContentViewController:[[MHSortOptionViewController alloc] init]];
+	}
+	if(!_popover.isPopoverVisible) {
+		[_popover presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+	} else {
+		[_popover dismissPopoverAnimated:YES];
+	}
 }
 
 - (NSString *)title {

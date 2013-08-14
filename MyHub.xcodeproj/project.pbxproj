@@ -21,6 +21,8 @@
 		116EEA7317B9CC07004C72C1 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 116EEA7117B9CC07004C72C1 /* SVProgressHUD.m */; };
 		116EEA7617B9D342004C72C1 /* MHStarredRepoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116EEA7517B9D342004C72C1 /* MHStarredRepoTableViewController.m */; };
 		116EEA9E17BAD827004C72C1 /* libOctoKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE99017B7F08F004C72C1 /* libOctoKit.a */; };
+		116EEAA117BB2D6F004C72C1 /* UIPopoverController+iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 116EEAA017BB2D6F004C72C1 /* UIPopoverController+iPhone.m */; };
+		116EEAA417BB339F004C72C1 /* MHSortOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116EEAA317BB339F004C72C1 /* MHSortOptionViewController.m */; };
 		1187BC7D17B7357D00FE080E /* MHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B457017B5E2D70046EC5F /* MHAppDelegate.m */; };
 		1187BC7E17B7358300FE080E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B456C17B5E2D70046EC5F /* main.m */; };
 		1187BC8217B73A3B00FE080E /* MHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1187BC8117B73A3B00FE080E /* MHMainViewController.m */; };
@@ -206,6 +208,10 @@
 		116EEA8617BAD386004C72C1 /* bootstrap.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bootstrap.sh; sourceTree = SOURCE_ROOT; };
 		116EEA9C17BAD394004C72C1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		116EEA9D17BAD39B004C72C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		116EEA9F17BB2D6F004C72C1 /* UIPopoverController+iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIPopoverController+iPhone.h"; path = "include/UIPopoverController+iPhone.h"; sourceTree = SOURCE_ROOT; };
+		116EEAA017BB2D6F004C72C1 /* UIPopoverController+iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIPopoverController+iPhone.m"; path = "src/UIPopoverController+iPhone.m"; sourceTree = SOURCE_ROOT; };
+		116EEAA217BB339F004C72C1 /* MHSortOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHSortOptionViewController.h; path = include/MHSortOptionViewController.h; sourceTree = SOURCE_ROOT; };
+		116EEAA317BB339F004C72C1 /* MHSortOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHSortOptionViewController.m; path = src/MHSortOptionViewController.m; sourceTree = SOURCE_ROOT; };
 		1187BC8017B73A3B00FE080E /* MHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHMainViewController.h; path = include/MHMainViewController.h; sourceTree = SOURCE_ROOT; };
 		1187BC8117B73A3B00FE080E /* MHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHMainViewController.m; path = src/MHMainViewController.m; sourceTree = SOURCE_ROOT; };
 		1187BC8317B73DF200FE080E /* MHHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHHomeViewController.h; path = include/MHHomeViewController.h; sourceTree = SOURCE_ROOT; };
@@ -378,6 +384,8 @@
 				1187BC8117B73A3B00FE080E /* MHMainViewController.m */,
 				1187BC8A17B774D700FE080E /* MHSettingsViewController.h */,
 				1187BC8917B774C900FE080E /* MHSettingsViewController.m */,
+				116EEAA217BB339F004C72C1 /* MHSortOptionViewController.h */,
+				116EEAA317BB339F004C72C1 /* MHSortOptionViewController.m */,
 				1187BC8617B73E5000FE080E /* MHRepoTableViewController.h */,
 				1187BC8717B73E5000FE080E /* MHRepoTableViewController.m */,
 				116EEA7417B9D342004C72C1 /* MHStarredRepoTableViewController.h */,
@@ -390,6 +398,8 @@
 				116EEA0017B82A36004C72C1 /* MHAuthenticationViewController.m */,
 				119B456F17B5E2D70046EC5F /* MHAppDelegate.h */,
 				119B457017B5E2D70046EC5F /* MHAppDelegate.m */,
+				116EEA9F17BB2D6F004C72C1 /* UIPopoverController+iPhone.h */,
+				116EEAA017BB2D6F004C72C1 /* UIPopoverController+iPhone.m */,
 				119B457217B5E2D70046EC5F /* Images.xcassets */,
 				119B456717B5E2D70046EC5F /* Supporting Files */,
 			);
@@ -679,9 +689,11 @@
 				1187BC7E17B7358300FE080E /* main.m in Sources */,
 				116EEA7617B9D342004C72C1 /* MHStarredRepoTableViewController.m in Sources */,
 				1187BC8517B73DF200FE080E /* MHHomeViewController.m in Sources */,
+				116EEAA117BB2D6F004C72C1 /* UIPopoverController+iPhone.m in Sources */,
 				116EEA6D17B9C5B0004C72C1 /* MHRepoViewController.m in Sources */,
 				1187BC8817B73E5000FE080E /* MHRepoTableViewController.m in Sources */,
 				116EEA7317B9CC07004C72C1 /* SVProgressHUD.m in Sources */,
+				116EEAA417BB339F004C72C1 /* MHSortOptionViewController.m in Sources */,
 				1187BC8B17B774FA00FE080E /* MHSettingsViewController.m in Sources */,
 				116EEA0117B82A36004C72C1 /* MHAuthenticationViewController.m in Sources */,
 				1187BC8217B73A3B00FE080E /* MHMainViewController.m in Sources */,

@@ -11,6 +11,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MHSortOptionViewController.h"
 
 @interface MHRepoTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

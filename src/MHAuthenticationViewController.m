@@ -26,7 +26,6 @@
 @implementation MHAuthenticationViewController {
 	UITextField *_username;
 	UITextField *_password;
-	UIButton *_submit;
 }
 
 - (void)viewDidLoad {
@@ -58,11 +57,11 @@
 		appDelegate.client = [OCTClient authenticatedClientWithUser:[OCTUser userWithLogin:_username.text server:[OCTServer serverWithBaseURL:nil]] password:_password.text];
 		
 		// FIXME: add a verifying pop-up here
-		[SVProgressHUD showWithStatus:@"Verifying" maskType:SVProgressHUDMaskTypeGradient];
+		[SVProgressHUD showWithStatus:@"Verifying..." maskType:SVProgressHUDMaskTypeGradient];
 		
 		NSError *error;
 		BOOL success;
-		OCTUser *user = [[appDelegate.client fetchUserInfo] asynchronousFirstOrDefault:nil success:&success error:&error];
+		[[appDelegate.client fetchUserInfo] asynchronousFirstOrDefault:nil success:&success error:&error];
 		
 		if(!success) {
 			if([error code] == OCTClientErrorConnectionFailed || [error code] == OCTClientErrorServiceRequestFailed) {
@@ -72,13 +71,7 @@
 			} else {
 				[SVProgressHUD showErrorWithStatus:@"Unknown Error"];
 			}
-		}/* else if(user == nil || user.plan == nil) {
-			// not authenticated
-			[SVProgressHUD dismiss];
-			
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Username or Password" message:@"Either the username or the password you entered is incorrect." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-			[alert show];
-		} */else {
+		} else {
 			[SVProgressHUD showSuccessWithStatus:@"Success"];
 		
 			// Slide-up transition
@@ -130,23 +123,23 @@
 	_password.delegate = self;
 	[_password setSecureTextEntry:YES];
 	
-	_submit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	_submit.translatesAutoresizingMaskIntoConstraints = NO;
-	[_submit setTitle:@"Sign in" forState:UIControlStateNormal];
-	[_submit addTarget:self action:@selector(sendSignin:) forControlEvents:UIControlEventTouchDown];
+	UIButton *submit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	submit.translatesAutoresizingMaskIntoConstraints = NO;
+	[submit setTitle:@"Sign in" forState:UIControlStateNormal];
+	[submit addTarget:self action:@selector(sendSignin:) forControlEvents:UIControlEventTouchDown];
 	
 	[self.view addSubview:label];
 	[self.view addSubview:_username];
 	[self.view addSubview:_password];
-	[self.view addSubview:_submit];
+	[self.view addSubview:submit];
 	
 	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_username attribute:NSLayoutAttributeTop multiplier:1.0 constant:-10.0]];
 	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:_username attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
 	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:_password attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_username attribute:NSLayoutAttributeBottom multiplier:1.0 constant:10.0]];
 	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:_password attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:_username attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0]];
 	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:_password attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:_username attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0]];
-	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:_submit attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_password attribute:NSLayoutAttributeBottom multiplier:1.0 constant:10.0]];
-	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:_submit attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:_password attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:submit attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_password attribute:NSLayoutAttributeBottom multiplier:1.0 constant:10.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:submit attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:_password attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
 }
 
 @end

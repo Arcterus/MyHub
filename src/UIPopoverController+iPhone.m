@@ -1,8 +1,8 @@
 //
-//  MHRepoViewController.h
+//  UIPopoverController+iPhone.m
 //  MyHub
 //
-//  Created by Arcterus on 8/12/13.
+//  Created by Arcterus on 8/13/13.
 //  Copyright (c) 2013 kRaken Research. All rights reserved.
 //
 //  This Source Code Form is subject to the terms of the Mozilla Public
@@ -10,11 +10,12 @@
 //  file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //
 
-#import <UIKit/UIKit.h>
-#import "OctoKit/OctoKit.h"
+#import "UIPopoverController+iPhone.h"
 
-@interface MHRepoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@implementation UIPopoverController (iPhone)
 
-- (id)initWithRepo:(OCTRepository *)repo;
++ (BOOL)_popoversDisabled {
+	return NO;
+}
 
 @end
