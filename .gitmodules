@@ -1,6 +1,9 @@
 [submodule "OctoKit"]
 	path = OctoKit
-	url = git://github.com/octokit/octokit.objc
+	url = git://github.com/Arcterus/octokit.objc
 [submodule "SVProgressHUD"]
 	path = SVProgressHUD
-	url = https://github.com/samvermette/SVProgressHUD.git
+	url = git://github.com/samvermette/SVProgressHUD.git
+[submodule "Bypass"]
+	path = Bypass
+	url = git://github.com/Uncodin/bypass.git

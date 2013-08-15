@@ -29,6 +29,7 @@
 	UITableView *_tableView;
 	NSMutableArray *_repos;
 	UIPopoverController *_popover;
+	UIBarButtonItem *_sortButton;
 }
 
 #pragma clang diagnostic push
@@ -66,10 +67,15 @@
 	UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
 	[refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
 	
-	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sort by Name" style:UIBarButtonItemStylePlain target:self action:@selector(selectSortMethod:)];
+	_sortButton = [[UIBarButtonItem alloc] initWithTitle:@"Sort by Name" style:UIBarButtonItemStylePlain target:self action:@selector(selectSortMethod:)];
 	
 	[_tableView addSubview:refreshControl];
 	[self.view addSubview:_tableView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	self.navigationItem.rightBarButtonItem = _sortButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,7 +97,7 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
 	}
 	OCTRepository *repo = [_repos objectAtIndex:indexPath.row];
-	cell.textLabel.text = repo.name;
+	cell.textLabel.text = [NSString stringWithFormat:@"%@/%@", repo.ownerLogin, repo.name];
 	cell.detailTextLabel.text = repo.repoDescription;
 	return cell;
 }
@@ -102,6 +108,7 @@
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
+	[_tableView reloadData];
 	[refreshControl endRefreshing];
 }
 

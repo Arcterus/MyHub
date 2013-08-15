@@ -13,6 +13,8 @@
 #import "MHRepoViewController.h"
 #import "MHAppDelegate.h"
 #import "SVProgressHUD.h"
+#import "Bypass.h"
+#include <resolv.h>
 
 #define INFO_SECTION 0
 #define CODE_SECTION 1
@@ -20,14 +22,21 @@
 @interface MHRepoViewController ()
 
 - (void)initSubviews;
+- (void)refresh:(UIRefreshControl *)refreshControl;
+- (NSString *)b64decode:(NSString *)encoded;
+
+@property (strong, nonatomic) OCTFileContent *readme;
 
 @end
 
 @implementation MHRepoViewController {
 	OCTRepository *_repo;
 	NSMutableArray *_files;
+	OCTFileContent *_readme;
 	UITableView *_tableView;
 }
+
+@synthesize readme = _readme;
 
 - (id)initWithRepo:(OCTRepository *)repo {
 	if(self = [super init]) {
@@ -36,9 +45,36 @@
 		MHAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 		OCTClient *client = appDelegate.client;
 		[SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
-		[[client fetchRelativePath:nil inRepository:repo reference:nil]
-		 subscribeNext:^(OCTContent *content) {
-			 [_files addObject:content];
+		[RACAble(self.readme) subscribeNext:^(OCTFileContent *content) {
+			if(content.content == nil) return;
+			CGSize size = self.view.frame.size;
+			BPMarkdownView *readmeView = [[BPMarkdownView alloc] initWithFrame:CGRectMake(.0f, .0f, size.width, size.height / 2) markdown:[self b64decode:content.content]];
+			/*[[client enqueueRequest:[client requestWithMethod:@"POST" path:@"/markdown" parameters:[NSDictionary dictionaryWithObject:[self b64decode:content.content] forKey:@"text"]] resultClass:[NSString class]] subscribeNext:^(NSString *markdown) {*/
+				[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+					//UIWebView *readmeView = [[UIWebView alloc] initWithFrame:CGRectMake(.0f, .0f, size.width, size.height / 2)];
+					//[readmeView loadHTMLString:markdown baseURL:repo.HTMLURL];
+					_tableView.tableFooterView = readmeView;
+					[_tableView reloadData];
+				}];
+			//}];
+		}];
+		[[[client fetchRelativePath:nil inRepository:repo reference:nil]
+		 flattenMap:^RACStream *(OCTContent *file) {
+			 if([file isKindOfClass:[OCTDirectoryContent class]]) {
+				 return [RACSignal return:file];
+			 } else {
+				 return [client fetchRelativePath:file.name inRepository:repo reference:nil];
+			 }
+		 }]
+		 subscribeNext:^(OCTContent *file) {
+			 NSString *lower = [file.name lowercaseString];
+			 if([file isKindOfClass:[OCTFileContent class]] &&
+					([lower isEqualToString:@"readme.md"] ||
+					 [lower isEqualToString:@"readme.markdown"] ||
+					 [lower isEqualToString:@"readme.mdown"])) {
+				 self.readme = (OCTFileContent *) file;
+			 }
+			 [_files addObject:file];
 		 } completed:^{
 			 [_files sortUsingComparator:^NSComparisonResult(OCTContent *obj1, OCTContent *obj2) {
 				 if([obj1 isKindOfClass:[OCTDirectoryContent class]]) {
@@ -46,7 +82,7 @@
 				 } else if([obj2 isKindOfClass:[OCTDirectoryContent class]]) {
 					 return NSOrderedDescending;
 				 }
-				 return NSOrderedSame;
+				 return [obj1.name compare:obj2.name];
 			 }];
 			 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
 				 [SVProgressHUD dismiss];
@@ -160,15 +196,34 @@
 - (void)initSubviews {
 	CGSize size = self.view.frame.size;
 	
-	UIScrollView *mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(.0f, .0f, size.width, size.height)];
-	
 	_tableView = [[UITableView alloc] initWithFrame:CGRectMake(.0f, .0f, size.width, size.height) style:UITableViewStyleGrouped];
 	_tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 	[_tableView insertSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)] withRowAnimation:UITableViewRowAnimationAutomatic];
+	/*if(_readme != nil) {
+		BPMarkdownView *readmeView = [[BPMarkdownView alloc] initWithFrame:CGRectMake(.0f, .0f, size.width, size.height / 2) markdown:_readme.content];
+		_tableView.tableFooterView = readmeView;
+	}*/
 	_tableView.delegate = (id) (_tableView.dataSource = self);
 	
-	[mainView addSubview:_tableView];
-	[self.view addSubview:mainView];
+	UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+	[refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+	
+	[_tableView addSubview:refreshControl];
+	[self.view addSubview:_tableView];
+}
+
+- (void)refresh:(UIRefreshControl *)refreshControl {
+	[_tableView reloadData];
+	[refreshControl endRefreshing];
+}
+
+- (NSString *)b64decode:(NSString *)encoded {
+	NSUInteger buffer_len = encoded.length * 3 / 4;
+	uint8_t *buffer = (uint8_t *) malloc(buffer_len);
+	b64_pton([encoded UTF8String], buffer, buffer_len);
+	NSString *result = [NSString stringWithUTF8String:(const char *) buffer];
+	free(buffer);
+	return result;
 }
 
 @end

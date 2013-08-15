@@ -16,7 +16,7 @@
 		116EE9FE17B8196C004C72C1 /* libISO8601DateFormatter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9FC17B8196C004C72C1 /* libISO8601DateFormatter.a */; };
 		116EEA0117B82A36004C72C1 /* MHAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116EEA0017B82A36004C72C1 /* MHAuthenticationViewController.m */; };
 		116EEA5417B88C4D004C72C1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EEA5317B88C4D004C72C1 /* QuartzCore.framework */; };
-		116EEA6D17B9C5B0004C72C1 /* MHRepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116EEA6C17B9C5B0004C72C1 /* MHRepoViewController.m */; };
+		116EEA6D17B9C5B0004C72C1 /* MHRepoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 116EEA6C17B9C5B0004C72C1 /* MHRepoViewController.mm */; };
 		116EEA7217B9CC07004C72C1 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 116EEA6F17B9CC07004C72C1 /* SVProgressHUD.bundle */; };
 		116EEA7317B9CC07004C72C1 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 116EEA7117B9CC07004C72C1 /* SVProgressHUD.m */; };
 		116EEA7617B9D342004C72C1 /* MHStarredRepoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116EEA7517B9D342004C72C1 /* MHStarredRepoTableViewController.m */; };
@@ -39,6 +39,9 @@
 		119B457C17B5E2D70046EC5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119B456417B5E2D70046EC5F /* UIKit.framework */; };
 		119B458417B5E2D70046EC5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 119B458217B5E2D70046EC5F /* InfoPlist.strings */; };
 		119B458617B5E2D70046EC5F /* MyHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B458517B5E2D70046EC5F /* MyHubTests.m */; };
+		11C6C53E17BC1E6600052A91 /* libBypass.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EEAC717BC1E27004C72C1 /* libBypass.a */; };
+		11C6C54017BC1E7000052A91 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C6C53F17BC1E7000052A91 /* CoreText.framework */; };
+		11C6C54217BC455E00052A91 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C6C54117BC455E00052A91 /* libresolv.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +171,20 @@
 			remoteGlobalIDString = D0476E8817791AE70071F3CB;
 			remoteInfo = "ISO8601DateFormatter iOS";
 		};
+		116EEAC617BC1E27004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EEAC117BC1E26004C72C1 /* Bypass.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5E5BC81816E004FA00165503;
+			remoteInfo = Bypass;
+		};
+		116EEAC817BC1E27004C72C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EEAC117BC1E26004C72C1 /* Bypass.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5E5BC82916E004FA00165503;
+			remoteInfo = BypassTests;
+		};
 		119B457D17B5E2D70046EC5F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 119B455517B5E2D70046EC5F /* Project object */;
@@ -199,7 +216,7 @@
 		116EEA5317B88C4D004C72C1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		116EEA5517B8B09A004C72C1 /* libsystem_blocks.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsystem_blocks.dylib; path = usr/lib/system/libsystem_blocks.dylib; sourceTree = SDKROOT; };
 		116EEA6B17B9C5B0004C72C1 /* MHRepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHRepoViewController.h; path = include/MHRepoViewController.h; sourceTree = SOURCE_ROOT; };
-		116EEA6C17B9C5B0004C72C1 /* MHRepoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHRepoViewController.m; path = src/MHRepoViewController.m; sourceTree = SOURCE_ROOT; };
+		116EEA6C17B9C5B0004C72C1 /* MHRepoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MHRepoViewController.mm; path = src/MHRepoViewController.mm; sourceTree = SOURCE_ROOT; };
 		116EEA6F17B9CC07004C72C1 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		116EEA7017B9CC07004C72C1 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		116EEA7117B9CC07004C72C1 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
@@ -212,6 +229,7 @@
 		116EEAA017BB2D6F004C72C1 /* UIPopoverController+iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIPopoverController+iPhone.m"; path = "src/UIPopoverController+iPhone.m"; sourceTree = SOURCE_ROOT; };
 		116EEAA217BB339F004C72C1 /* MHSortOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHSortOptionViewController.h; path = include/MHSortOptionViewController.h; sourceTree = SOURCE_ROOT; };
 		116EEAA317BB339F004C72C1 /* MHSortOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHSortOptionViewController.m; path = src/MHSortOptionViewController.m; sourceTree = SOURCE_ROOT; };
+		116EEAC117BC1E26004C72C1 /* Bypass.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Bypass.xcodeproj; path = Bypass/platform/ios/Bypass/Bypass.xcodeproj; sourceTree = SOURCE_ROOT; };
 		1187BC8017B73A3B00FE080E /* MHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHMainViewController.h; path = include/MHMainViewController.h; sourceTree = SOURCE_ROOT; };
 		1187BC8117B73A3B00FE080E /* MHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHMainViewController.m; path = src/MHMainViewController.m; sourceTree = SOURCE_ROOT; };
 		1187BC8317B73DF200FE080E /* MHHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHHomeViewController.h; path = include/MHHomeViewController.h; sourceTree = SOURCE_ROOT; };
@@ -236,6 +254,8 @@
 		119B458117B5E2D70046EC5F /* MyHubTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MyHubTests-Info.plist"; path = "test/resource/MyHubTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		119B458317B5E2D70046EC5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = test/resource/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		119B458517B5E2D70046EC5F /* MyHubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MyHubTests.m; path = test/src/MyHubTests.m; sourceTree = SOURCE_ROOT; };
+		11C6C53F17BC1E7000052A91 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		11C6C54117BC455E00052A91 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,18 +263,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C6C54017BC1E7000052A91 /* CoreText.framework in Frameworks */,
 				116EEA5417B88C4D004C72C1 /* QuartzCore.framework in Frameworks */,
 				116EE9F917B8190F004C72C1 /* SystemConfiguration.framework in Frameworks */,
 				116EE9F817B818EF004C72C1 /* MobileCoreServices.framework in Frameworks */,
 				119B456317B5E2D70046EC5F /* CoreGraphics.framework in Frameworks */,
 				119B456517B5E2D70046EC5F /* UIKit.framework in Frameworks */,
 				119B456117B5E2D70046EC5F /* Foundation.framework in Frameworks */,
+				11C6C53E17BC1E6600052A91 /* libBypass.a in Frameworks */,
 				116EEA9E17BAD827004C72C1 /* libOctoKit.a in Frameworks */,
 				116EE9DC17B7F186004C72C1 /* libReactiveCocoa-iOS.a in Frameworks */,
 				116EE9DB17B7F183004C72C1 /* libMantle.a in Frameworks */,
 				116EE9FD17B8196C004C72C1 /* libAFNetworking.a in Frameworks */,
 				116EE9FE17B8196C004C72C1 /* libISO8601DateFormatter.a in Frameworks */,
 				116EE9FA17B8196C004C72C1 /* libOHHTTPStubs-iOS.a in Frameworks */,
+				11C6C54217BC455E00052A91 /* libresolv.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +351,15 @@
 			path = SVProgressHUD/SVProgressHUD;
 			sourceTree = "<group>";
 		};
+		116EEAC217BC1E26004C72C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				116EEAC717BC1E27004C72C1 /* libBypass.a */,
+				116EEAC917BC1E27004C72C1 /* BypassTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		119B455417B5E2D70046EC5F = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +368,7 @@
 				119B455F17B5E2D70046EC5F /* Frameworks */,
 				119B455E17B5E2D70046EC5F /* Products */,
 				116EEA6E17B9CC07004C72C1 /* SVProgressHUD */,
+				116EEAC117BC1E26004C72C1 /* Bypass.xcodeproj */,
 				116EE98017B7F08E004C72C1 /* OctoKit.xcodeproj */,
 				116EE9B117B7F0C5004C72C1 /* OctoKitDependencies.xcodeproj */,
 				116EE9B317B7F0E2004C72C1 /* Mantle.xcodeproj */,
@@ -355,6 +388,8 @@
 		119B455F17B5E2D70046EC5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11C6C54117BC455E00052A91 /* libresolv.dylib */,
+				11C6C53F17BC1E7000052A91 /* CoreText.framework */,
 				116EEA5517B8B09A004C72C1 /* libsystem_blocks.dylib */,
 				116EEA5317B88C4D004C72C1 /* QuartzCore.framework */,
 				116EE9FB17B8196C004C72C1 /* libAFNetworking.a */,
@@ -391,7 +426,7 @@
 				116EEA7417B9D342004C72C1 /* MHStarredRepoTableViewController.h */,
 				116EEA7517B9D342004C72C1 /* MHStarredRepoTableViewController.m */,
 				116EEA6B17B9C5B0004C72C1 /* MHRepoViewController.h */,
-				116EEA6C17B9C5B0004C72C1 /* MHRepoViewController.m */,
+				116EEA6C17B9C5B0004C72C1 /* MHRepoViewController.mm */,
 				1187BC8317B73DF200FE080E /* MHHomeViewController.h */,
 				1187BC8417B73DF200FE080E /* MHHomeViewController.m */,
 				116EE9FF17B82A36004C72C1 /* MHAuthenticationViewController.h */,
@@ -505,6 +540,10 @@
 			productRefGroup = 119B455E17B5E2D70046EC5F /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 116EEAC217BC1E26004C72C1 /* Products */;
+					ProjectRef = 116EEAC117BC1E26004C72C1 /* Bypass.xcodeproj */;
+				},
 				{
 					ProductGroup = 116EE9B417B7F0E2004C72C1 /* Products */;
 					ProjectRef = 116EE9B317B7F0E2004C72C1 /* Mantle.xcodeproj */;
@@ -657,6 +696,20 @@
 			remoteRef = 116EEA2717B83276004C72C1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		116EEAC717BC1E27004C72C1 /* libBypass.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBypass.a;
+			remoteRef = 116EEAC617BC1E27004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		116EEAC917BC1E27004C72C1 /* BypassTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BypassTests.octest;
+			remoteRef = 116EEAC817BC1E27004C72C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -690,7 +743,7 @@
 				116EEA7617B9D342004C72C1 /* MHStarredRepoTableViewController.m in Sources */,
 				1187BC8517B73DF200FE080E /* MHHomeViewController.m in Sources */,
 				116EEAA117BB2D6F004C72C1 /* UIPopoverController+iPhone.m in Sources */,
-				116EEA6D17B9C5B0004C72C1 /* MHRepoViewController.m in Sources */,
+				116EEA6D17B9C5B0004C72C1 /* MHRepoViewController.mm in Sources */,
 				1187BC8817B73E5000FE080E /* MHRepoTableViewController.m in Sources */,
 				116EEA7317B9CC07004C72C1 /* SVProgressHUD.m in Sources */,
 				116EEAA417BB339F004C72C1 /* MHSortOptionViewController.m in Sources */,
@@ -836,6 +889,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
 					"$(inherited)",
+					"$(SRCROOT)/Bypass/platform/ios/Bypass/Bypass",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/resource/MyHub-Info.plist";
 				INFOPLIST_OUTPUT_FORMAT = binary;
@@ -883,6 +937,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
 					"$(inherited)",
+					"$(SRCROOT)/Bypass/platform/ios/Bypass/Bypass",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/resource/MyHub-Info.plist";
 				INFOPLIST_OUTPUT_FORMAT = binary;
