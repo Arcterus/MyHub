@@ -45,7 +45,7 @@
 		MHAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 		OCTClient *client = appDelegate.client;
 		[SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
-		[RACAble(self.readme) subscribeNext:^(OCTFileContent *content) {
+		[[RACObserve(self, readme) skip:1] subscribeNext:^(OCTFileContent *content) {
 			if(content.content == nil) return;
 			CGSize size = self.view.frame.size;
 			BPMarkdownView *readmeView = [[BPMarkdownView alloc] initWithFrame:CGRectMake(.0f, .0f, size.width, size.height / 2) markdown:[self b64decode:content.content]];
@@ -63,6 +63,7 @@
 			 if([file isKindOfClass:[OCTDirectoryContent class]]) {
 				 return [RACSignal return:file];
 			 } else {
+				 // XXX: failing?
 				 return [client fetchRelativePath:file.name inRepository:repo reference:nil];
 			 }
 		 }]

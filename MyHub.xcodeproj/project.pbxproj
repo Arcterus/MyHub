@@ -556,9 +556,6 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "kRaken Research";
 				TargetAttributes = {
-					119B455C17B5E2D70046EC5F = {
-						DevelopmentTeam = BBAR9SN5JT;
-					};
 					119B457717B5E2D70046EC5F = {
 						TestTargetID = 119B455C17B5E2D70046EC5F;
 					};
@@ -1023,7 +1020,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MyHub/MyHub-Prefix.pch";
+				GCC_PREFIX_HEADER = "include/MyHub-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
