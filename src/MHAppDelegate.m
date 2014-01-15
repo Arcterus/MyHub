@@ -13,6 +13,7 @@
 #import "MHAppDelegate.h"
 #import "MHMainViewController.h"
 #import "MHAuthenticationViewController.h"
+#include "MHClientSecret.h"
 
 @implementation MHAppDelegate
 
@@ -20,6 +21,8 @@
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	// Override point for customization after application launch.
 	self.window.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];//[UIColor whiteColor];
+	
+	[OCTClient setClientID:@CLIENT_ID clientSecret:@CLIENT_SECRET];
 	
 	self.window.rootViewController = [[MHAuthenticationViewController alloc] init];
 	

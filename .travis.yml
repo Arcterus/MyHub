@@ -1,2 +1,4 @@
 language: objective-c
 before_script: ./bootstrap.sh
+xcode_project: MyHub.xcodeproj
+xcode_scheme: MyHub

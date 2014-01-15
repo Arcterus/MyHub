@@ -21,8 +21,6 @@
 - (void)sendSignin:(id)sender;
 - (void)animationDone:(UIViewController *)controller;
 - (void)transitionToMain;
-- (BOOL)checkKeychain;
-- (BOOL)checkAuthentication:(OCTClient *)client;
 
 @end
 
@@ -39,11 +37,37 @@
 	return self;
 }
 
+// XXX: ugly (needs to be re-factored)
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
-	if([self checkKeychain]) {
-		[self transitionToMain];
+	NSString *name = [_keychain objectForKey:(__bridge id)(kSecAttrAccount)];
+	if(name && ![name isEqualToString:@""]) {
+		OCTUser *user = [OCTUser userWithLogin:name server:OCTServer.dotComServer];
+		OCTClient *client = [OCTClient authenticatedClientWithUser:user token:[[NSString alloc] initWithData:[_keychain objectForKey:(__bridge id)(kSecValueData)] encoding:NSUTF8StringEncoding]];
+		[SVProgressHUD showWithStatus:@"Verifying..." maskType:SVProgressHUDMaskTypeGradient];
+		
+		[[client fetchUserInfo] subscribeError:^(NSError *error) {
+			[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+				if([error code] == OCTClientErrorConnectionFailed || [error code] == OCTClientErrorServiceRequestFailed) {
+					[SVProgressHUD showErrorWithStatus:@"Network Error"];
+				} else if([error code] == OCTClientErrorAuthenticationFailed) {
+					[SVProgressHUD showErrorWithStatus:@"Invalid Username or Password"];
+				} else {
+					[SVProgressHUD showErrorWithStatus:@"Unknown Error"];
+				}
+				[self initSubviews];
+			}];
+		} completed:^ {
+			[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+				[SVProgressHUD showSuccessWithStatus:@"Success"];
+				
+				MHAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+				appDelegate.client = client;
+				
+				[self transitionToMain];
+			}];
+		}];
 	} else {
 		[self initSubviews];
 	}
@@ -68,57 +92,49 @@
 - (void)sendSignin:(id)sender {
 	if([_password.text length] > 0 && [_username.text length] > 0) {
 		[self.view endEditing:YES];
-		if([self checkAuthentication:[OCTClient authenticatedClientWithUser:[OCTUser userWithLogin:_username.text server:[OCTServer serverWithBaseURL:nil]] password:_password.text]]) {
-			MHAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-			[_keychain setObject:appDelegate.client.user.login forKey:@"username"];
-			[_keychain setObject:appDelegate.client.token forKey:@"token"];
-			[self transitionToMain];
-		}
+		OCTClient __block *client = nil;
+		OCTUser *user = [OCTUser userWithLogin:_username.text server:OCTServer.dotComServer];
+		
+		[SVProgressHUD showWithStatus:@"Verifying..." maskType:SVProgressHUDMaskTypeGradient];
+		
+		[[OCTClient signInAsUser:user password:_password.text oneTimePassword:nil scopes:OCTClientAuthorizationScopesUser]
+		 subscribeNext:^(OCTClient *authClient) {
+			 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+				 [SVProgressHUD showSuccessWithStatus:@"Success"];
+				 client = authClient;
+			 }];
+		 } error:^(NSError *error) {
+			 if([error.domain isEqual:OCTClientErrorDomain] && error.code == OCTClientErrorTwoFactorAuthenticationOneTimePasswordRequired) {
+				 //[self showTwoFactorAuthField];
+				 exit(0);
+			 } else {
+				 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+					 if([error code] == OCTClientErrorConnectionFailed || [error code] == OCTClientErrorServiceRequestFailed) {
+						 [SVProgressHUD showErrorWithStatus:@"Network Error"];
+					 } else if([error code] == OCTClientErrorAuthenticationFailed) {
+						 [SVProgressHUD showErrorWithStatus:@"Invalid Username or Password"];
+					 } else {
+						 [SVProgressHUD showErrorWithStatus:@"Unknown Error"];
+					 }
+				 }];
+			 }
+		 } completed:^{
+			 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+				 if(client) {
+					 MHAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+					 appDelegate.client = client;
+					 [_keychain setObject:client.user.login forKey:(__bridge id)(kSecAttrAccount)];
+					 [_keychain setObject:client.token forKey:(__bridge id)(kSecValueData)];
+					 [self transitionToMain];
+				 }
+			 }];
+		 }];
 	}
 }
 
 - (void)animationDone:(UIViewController *)controller {
 	MHAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 	appDelegate.window.rootViewController = controller;
-}
-
-- (BOOL)checkKeychain {
-	NSString *name = [_keychain objectForKey:(__bridge id)(kSecAttrAccount)];
-	if(name) {
-		OCTUser *user = [OCTUser userWithLogin:name server:OCTServer.dotComServer];
-		OCTClient *client = [OCTClient authenticatedClientWithUser:user password:[_keychain objectForKey:(__bridge id)(kSecValueData)]];
-		return [self checkAuthentication:client];
-	}
-	return NO;
-}
-
-- (BOOL)checkAuthentication:(OCTClient *)client {
-	BOOL __block success = NO;
-	
-	[SVProgressHUD showWithStatus:@"Verifying..." maskType:SVProgressHUDMaskTypeGradient];
-	
-	[[client fetchUserInfo] subscribeError:^(NSError *error) {
-		[[NSOperationQueue mainQueue] addOperationWithBlock:^{
-			if([error code] == OCTClientErrorConnectionFailed || [error code] == OCTClientErrorServiceRequestFailed) {
-				[SVProgressHUD showErrorWithStatus:@"Network Error"];
-			} else if([error code] == OCTClientErrorAuthenticationFailed) {
-				[SVProgressHUD showErrorWithStatus:@"Invalid Username or Password"];
-			} else {
-				[SVProgressHUD showErrorWithStatus:@"Unknown Error"];
-			}
-		}];
-	} completed:^ {
-		[[NSOperationQueue mainQueue] addOperationWithBlock:^{
-			[SVProgressHUD showSuccessWithStatus:@"Success"];
-			
-			MHAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-			appDelegate.client = client;
-			
-			success = YES;
-		}];
-	}];
-	
-	return success;
 }
 
 - (void)transitionToMain {
@@ -175,6 +191,11 @@
 	[self.view addSubview:_username];
 	[self.view addSubview:_password];
 	[self.view addSubview:submit];
+	
+	[self.view sendSubviewToBack:label];
+	[self.view sendSubviewToBack:_username];
+	[self.view sendSubviewToBack:_password];
+	[self.view sendSubviewToBack:submit];
 	
 	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_username attribute:NSLayoutAttributeTop multiplier:1.0 constant:-10.0]];
 	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:_username attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];

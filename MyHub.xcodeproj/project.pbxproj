@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		1123AFD01886343D00A4A759 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1123AFCF1886343C00A4A759 /* Security.framework */; };
 		1123AFE7188635C400A4A759 /* MHKeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1123AFE6188635C400A4A759 /* MHKeychainItemWrapper.m */; };
-		116EE9DB17B7F183004C72C1 /* libMantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9BF17B7F0E2004C72C1 /* libMantle.a */; };
+		1123B0851886575900A4A759 /* libBypass.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EEAC717BC1E27004C72C1 /* libBypass.a */; };
+		116EE9DB17B7F183004C72C1 /* libMantle-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9BF17B7F0E2004C72C1 /* libMantle-iOS.a */; };
 		116EE9DC17B7F186004C72C1 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9CE17B7F10E004C72C1 /* libReactiveCocoa-iOS.a */; };
 		116EE9F817B818EF004C72C1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9EB17B8051C004C72C1 /* MobileCoreServices.framework */; };
 		116EE9F917B8190F004C72C1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9E917B80514004C72C1 /* SystemConfiguration.framework */; };
@@ -41,12 +42,32 @@
 		119B457C17B5E2D70046EC5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119B456417B5E2D70046EC5F /* UIKit.framework */; };
 		119B458417B5E2D70046EC5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 119B458217B5E2D70046EC5F /* InfoPlist.strings */; };
 		119B458617B5E2D70046EC5F /* MyHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B458517B5E2D70046EC5F /* MyHubTests.m */; };
-		11C6C53E17BC1E6600052A91 /* libBypass.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EEAC717BC1E27004C72C1 /* libBypass.a */; };
 		11C6C54017BC1E7000052A91 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C6C53F17BC1E7000052A91 /* CoreText.framework */; };
 		11C6C54217BC455E00052A91 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C6C54117BC455E00052A91 /* libresolv.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1123B062188652A700A4A759 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE98017B7F08E004C72C1 /* OctoKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0871FE3169E309900016ACA;
+			remoteInfo = "OctoKit iOS";
+		};
+		1123B0871886575900A4A759 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9B317B7F0E2004C72C1 /* Mantle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0A56B461804B04900A84EDC;
+			remoteInfo = "Mantle-Mac";
+		};
+		1123B08A1886575900A4A759 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116EE9C217B7F10E004C72C1 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D05AD39417F2D56F0080895B;
+			remoteInfo = "ReactiveCocoa-Mac";
+		};
 		116EE98B17B7F08F004C72C1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 116EE98017B7F08E004C72C1 /* OctoKit.xcodeproj */;
@@ -200,6 +221,7 @@
 		1123AFCF1886343C00A4A759 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1123AFE51886356B00A4A759 /* MHKeychainItemWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MHKeychainItemWrapper.h; path = include/MHKeychainItemWrapper.h; sourceTree = SOURCE_ROOT; };
 		1123AFE6188635C400A4A759 /* MHKeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHKeychainItemWrapper.m; path = src/MHKeychainItemWrapper.m; sourceTree = SOURCE_ROOT; };
+		1154E57418865D420092DE06 /* MHClientSecret.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MHClientSecret.h; path = include/MHClientSecret.h; sourceTree = SOURCE_ROOT; };
 		116EE98017B7F08E004C72C1 /* OctoKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OctoKit.xcodeproj; path = OctoKit/OctoKit.xcodeproj; sourceTree = "<group>"; };
 		116EE9B117B7F0C5004C72C1 /* OctoKitDependencies.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OctoKitDependencies.xcodeproj; path = OctoKit/External/OctoKitDependencies/OctoKitDependencies.xcodeproj; sourceTree = "<group>"; };
 		116EE9B317B7F0E2004C72C1 /* Mantle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Mantle.xcodeproj; path = OctoKit/External/Mantle/Mantle.xcodeproj; sourceTree = "<group>"; };
@@ -276,10 +298,10 @@
 				119B456317B5E2D70046EC5F /* CoreGraphics.framework in Frameworks */,
 				119B456517B5E2D70046EC5F /* UIKit.framework in Frameworks */,
 				119B456117B5E2D70046EC5F /* Foundation.framework in Frameworks */,
-				11C6C53E17BC1E6600052A91 /* libBypass.a in Frameworks */,
+				1123B0851886575900A4A759 /* libBypass.a in Frameworks */,
 				116EEA9E17BAD827004C72C1 /* libOctoKit.a in Frameworks */,
 				116EE9DC17B7F186004C72C1 /* libReactiveCocoa-iOS.a in Frameworks */,
-				116EE9DB17B7F183004C72C1 /* libMantle.a in Frameworks */,
+				116EE9DB17B7F183004C72C1 /* libMantle-iOS.a in Frameworks */,
 				116EE9FD17B8196C004C72C1 /* libAFNetworking.a in Frameworks */,
 				116EE9FE17B8196C004C72C1 /* libISO8601DateFormatter.a in Frameworks */,
 				116EE9FA17B8196C004C72C1 /* libOHHTTPStubs-iOS.a in Frameworks */,
@@ -315,9 +337,10 @@
 			isa = PBXGroup;
 			children = (
 				116EE9BB17B7F0E2004C72C1 /* Mantle.framework */,
-				116EE9BD17B7F0E2004C72C1 /* Mantle Mac Tests.octest */,
-				116EE9BF17B7F0E2004C72C1 /* libMantle.a */,
-				116EE9C117B7F0E2004C72C1 /* Mantle iOS Tests.octest */,
+				116EE9BD17B7F0E2004C72C1 /* Mantle Tests.octest */,
+				116EE9BF17B7F0E2004C72C1 /* libMantle-iOS.a */,
+				116EE9C117B7F0E2004C72C1 /* Mantle-iOS Tests.octest */,
+				1123B0881886575900A4A759 /* libMantle-Mac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -331,6 +354,7 @@
 				116EE9D217B7F10E004C72C1 /* ReactiveCocoaTests-iOS.octest */,
 				116EE9D417B7F10E004C72C1 /* ReactiveCocoa-iOS-UIKitTestHost.app */,
 				116EE9D617B7F10E004C72C1 /* ReactiveCocoa-iOS-UIKitTestHostTests.octest */,
+				1123B08B1886575900A4A759 /* libReactiveCocoa-Mac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -422,6 +446,7 @@
 		119B456617B5E2D70046EC5F /* MyHub */ = {
 			isa = PBXGroup;
 			children = (
+				1154E57418865D420092DE06 /* MHClientSecret.h */,
 				1123AFE51886356B00A4A759 /* MHKeychainItemWrapper.h */,
 				1123AFE6188635C400A4A759 /* MHKeychainItemWrapper.m */,
 				1187BC8017B73A3B00FE080E /* MHMainViewController.h */,
@@ -496,6 +521,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1123B063188652A700A4A759 /* PBXTargetDependency */,
 			);
 			name = MyHub;
 			productName = MyHub;
@@ -579,6 +605,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		1123B0881886575900A4A759 /* libMantle-Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMantle-Mac.a";
+			remoteRef = 1123B0871886575900A4A759 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1123B08B1886575900A4A759 /* libReactiveCocoa-Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libReactiveCocoa-Mac.a";
+			remoteRef = 1123B08A1886575900A4A759 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		116EE98C17B7F08F004C72C1 /* OctoKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -614,24 +654,24 @@
 			remoteRef = 116EE9BA17B7F0E2004C72C1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		116EE9BD17B7F0E2004C72C1 /* Mantle Mac Tests.octest */ = {
+		116EE9BD17B7F0E2004C72C1 /* Mantle Tests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Mantle Mac Tests.octest";
+			path = "Mantle Tests.octest";
 			remoteRef = 116EE9BC17B7F0E2004C72C1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		116EE9BF17B7F0E2004C72C1 /* libMantle.a */ = {
+		116EE9BF17B7F0E2004C72C1 /* libMantle-iOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libMantle.a;
+			path = "libMantle-iOS.a";
 			remoteRef = 116EE9BE17B7F0E2004C72C1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		116EE9C117B7F0E2004C72C1 /* Mantle iOS Tests.octest */ = {
+		116EE9C117B7F0E2004C72C1 /* Mantle-iOS Tests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Mantle iOS Tests.octest";
+			path = "Mantle-iOS Tests.octest";
 			remoteRef = 116EE9C017B7F0E2004C72C1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -774,6 +814,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1123B063188652A700A4A759 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "OctoKit iOS";
+			targetProxy = 1123B062188652A700A4A759 /* PBXContainerItemProxy */;
+		};
 		119B457E17B5E2D70046EC5F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 119B455C17B5E2D70046EC5F /* MyHub */;
