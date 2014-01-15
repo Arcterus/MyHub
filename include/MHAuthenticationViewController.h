@@ -11,6 +11,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MHKeychainItemWrapper.h"
 
 @interface MHAuthenticationViewController : UIViewController <UITextFieldDelegate>
 

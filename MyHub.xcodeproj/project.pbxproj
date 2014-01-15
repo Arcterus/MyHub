@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1123AFD01886343D00A4A759 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1123AFCF1886343C00A4A759 /* Security.framework */; };
+		1123AFE7188635C400A4A759 /* MHKeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1123AFE6188635C400A4A759 /* MHKeychainItemWrapper.m */; };
 		116EE9DB17B7F183004C72C1 /* libMantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9BF17B7F0E2004C72C1 /* libMantle.a */; };
 		116EE9DC17B7F186004C72C1 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9CE17B7F10E004C72C1 /* libReactiveCocoa-iOS.a */; };
 		116EE9F817B818EF004C72C1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116EE9EB17B8051C004C72C1 /* MobileCoreServices.framework */; };
@@ -195,6 +197,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1123AFCF1886343C00A4A759 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1123AFE51886356B00A4A759 /* MHKeychainItemWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MHKeychainItemWrapper.h; path = include/MHKeychainItemWrapper.h; sourceTree = SOURCE_ROOT; };
+		1123AFE6188635C400A4A759 /* MHKeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHKeychainItemWrapper.m; path = src/MHKeychainItemWrapper.m; sourceTree = SOURCE_ROOT; };
 		116EE98017B7F08E004C72C1 /* OctoKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OctoKit.xcodeproj; path = OctoKit/OctoKit.xcodeproj; sourceTree = "<group>"; };
 		116EE9B117B7F0C5004C72C1 /* OctoKitDependencies.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OctoKitDependencies.xcodeproj; path = OctoKit/External/OctoKitDependencies/OctoKitDependencies.xcodeproj; sourceTree = "<group>"; };
 		116EE9B317B7F0E2004C72C1 /* Mantle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Mantle.xcodeproj; path = OctoKit/External/Mantle/Mantle.xcodeproj; sourceTree = "<group>"; };
@@ -263,6 +268,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1123AFD01886343D00A4A759 /* Security.framework in Frameworks */,
 				11C6C54017BC1E7000052A91 /* CoreText.framework in Frameworks */,
 				116EEA5417B88C4D004C72C1 /* QuartzCore.framework in Frameworks */,
 				116EE9F917B8190F004C72C1 /* SystemConfiguration.framework in Frameworks */,
@@ -388,6 +394,7 @@
 		119B455F17B5E2D70046EC5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1123AFCF1886343C00A4A759 /* Security.framework */,
 				11C6C54117BC455E00052A91 /* libresolv.dylib */,
 				11C6C53F17BC1E7000052A91 /* CoreText.framework */,
 				116EEA5517B8B09A004C72C1 /* libsystem_blocks.dylib */,
@@ -415,6 +422,8 @@
 		119B456617B5E2D70046EC5F /* MyHub */ = {
 			isa = PBXGroup;
 			children = (
+				1123AFE51886356B00A4A759 /* MHKeychainItemWrapper.h */,
+				1123AFE6188635C400A4A759 /* MHKeychainItemWrapper.m */,
 				1187BC8017B73A3B00FE080E /* MHMainViewController.h */,
 				1187BC8117B73A3B00FE080E /* MHMainViewController.m */,
 				1187BC8A17B774D700FE080E /* MHSettingsViewController.h */,
@@ -742,6 +751,7 @@
 				1187BC7E17B7358300FE080E /* main.m in Sources */,
 				116EEA7617B9D342004C72C1 /* MHStarredRepoTableViewController.m in Sources */,
 				1187BC8517B73DF200FE080E /* MHHomeViewController.m in Sources */,
+				1123AFE7188635C400A4A759 /* MHKeychainItemWrapper.m in Sources */,
 				116EEAA117BB2D6F004C72C1 /* UIPopoverController+iPhone.m in Sources */,
 				116EEA6D17B9C5B0004C72C1 /* MHRepoViewController.mm in Sources */,
 				1187BC8817B73E5000FE080E /* MHRepoTableViewController.m in Sources */,

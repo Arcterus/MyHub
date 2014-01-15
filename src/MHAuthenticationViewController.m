@@ -20,18 +20,33 @@
 - (void)initSubviews;
 - (void)sendSignin:(id)sender;
 - (void)animationDone:(UIViewController *)controller;
+- (void)transitionToMain;
+- (BOOL)checkKeychain;
+- (BOOL)checkAuthentication:(OCTClient *)client;
 
 @end
 
 @implementation MHAuthenticationViewController {
 	UITextField *_username;
 	UITextField *_password;
+	MHKeychainItemWrapper *_keychain;
+}
+
+- (id)init {
+	if(self = [super init]) {
+		_keychain = [[MHKeychainItemWrapper alloc] initWithIdentifier:@"MyHubLogin" accessGroup:nil];
+	}
+	return self;
 }
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
-	[self initSubviews];
+	if([self checkKeychain]) {
+		[self transitionToMain];
+	} else {
+		[self initSubviews];
+	}
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,46 +68,75 @@
 - (void)sendSignin:(id)sender {
 	if([_password.text length] > 0 && [_username.text length] > 0) {
 		[self.view endEditing:YES];
-		MHAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-		appDelegate.client = [OCTClient authenticatedClientWithUser:[OCTUser userWithLogin:_username.text server:[OCTServer serverWithBaseURL:nil]] password:_password.text];
-		
-		[SVProgressHUD showWithStatus:@"Verifying..." maskType:SVProgressHUDMaskTypeGradient];
-		
-		[[appDelegate.client fetchUserInfo] subscribeError:^(NSError *error) {
-			[[NSOperationQueue mainQueue] addOperationWithBlock:^{
-				if([error code] == OCTClientErrorConnectionFailed || [error code] == OCTClientErrorServiceRequestFailed) {
-					[SVProgressHUD showErrorWithStatus:@"Network Error"];
-				} else if([error code] == OCTClientErrorAuthenticationFailed) {
-					[SVProgressHUD showErrorWithStatus:@"Invalid Username or Password"];
-				} else {
-					[SVProgressHUD showErrorWithStatus:@"Unknown Error"];
-				}
-			}];
-		} completed:^ {
-			[[NSOperationQueue mainQueue] addOperationWithBlock:^{
-				[SVProgressHUD showSuccessWithStatus:@"Success"];
-				
-				// Slide-up transition
-				CGFloat duration = 0.7;
-				MHMainViewController *mainView = [[MHMainViewController alloc] init];
-				[mainView viewWillAppear:YES];
-				[self viewWillDisappear:YES];
-				[appDelegate.window insertSubview:mainView.view belowSubview:self.view];
-				[mainView viewDidAppear:YES];
-				[UIView beginAnimations:nil context:nil];
-				[UIView setAnimationDuration:duration];
-				mainView.view.transform = CGAffineTransformMakeTranslation(0, 0);
-				self.view.transform = CGAffineTransformMakeTranslation(0, -self.view.frame.size.height);
-				[UIView commitAnimations];
-				[self performSelector:@selector(animationDone:) withObject:mainView afterDelay:duration];
-			}];
-		}];
+		if([self checkAuthentication:[OCTClient authenticatedClientWithUser:[OCTUser userWithLogin:_username.text server:[OCTServer serverWithBaseURL:nil]] password:_password.text]]) {
+			MHAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+			[_keychain setObject:appDelegate.client.user.login forKey:@"username"];
+			[_keychain setObject:appDelegate.client.token forKey:@"token"];
+			[self transitionToMain];
+		}
 	}
 }
 
 - (void)animationDone:(UIViewController *)controller {
 	MHAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 	appDelegate.window.rootViewController = controller;
+}
+
+- (BOOL)checkKeychain {
+	NSString *name = [_keychain objectForKey:(__bridge id)(kSecAttrAccount)];
+	if(name) {
+		OCTUser *user = [OCTUser userWithLogin:name server:OCTServer.dotComServer];
+		OCTClient *client = [OCTClient authenticatedClientWithUser:user password:[_keychain objectForKey:(__bridge id)(kSecValueData)]];
+		return [self checkAuthentication:client];
+	}
+	return NO;
+}
+
+- (BOOL)checkAuthentication:(OCTClient *)client {
+	BOOL __block success = NO;
+	
+	[SVProgressHUD showWithStatus:@"Verifying..." maskType:SVProgressHUDMaskTypeGradient];
+	
+	[[client fetchUserInfo] subscribeError:^(NSError *error) {
+		[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+			if([error code] == OCTClientErrorConnectionFailed || [error code] == OCTClientErrorServiceRequestFailed) {
+				[SVProgressHUD showErrorWithStatus:@"Network Error"];
+			} else if([error code] == OCTClientErrorAuthenticationFailed) {
+				[SVProgressHUD showErrorWithStatus:@"Invalid Username or Password"];
+			} else {
+				[SVProgressHUD showErrorWithStatus:@"Unknown Error"];
+			}
+		}];
+	} completed:^ {
+		[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+			[SVProgressHUD showSuccessWithStatus:@"Success"];
+			
+			MHAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+			appDelegate.client = client;
+			
+			success = YES;
+		}];
+	}];
+	
+	return success;
+}
+
+- (void)transitionToMain {
+	MHAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	
+	// Slide-up transition
+	CGFloat duration = 0.7;
+	MHMainViewController *mainView = [[MHMainViewController alloc] init];
+	[mainView viewWillAppear:YES];
+	[self viewWillDisappear:YES];
+	[appDelegate.window insertSubview:mainView.view belowSubview:self.view];
+	[mainView viewDidAppear:YES];
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:duration];
+	mainView.view.transform = CGAffineTransformMakeTranslation(0, 0);
+	self.view.transform = CGAffineTransformMakeTranslation(0, -self.view.frame.size.height);
+	[UIView commitAnimations];
+	[self performSelector:@selector(animationDone:) withObject:mainView afterDelay:duration];
 }
 
 - (void)initSubviews {
